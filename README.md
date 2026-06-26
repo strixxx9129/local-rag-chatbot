@@ -342,4 +342,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 - [pgvector](https://github.com/pgvector/pgvector) — vector search in PostgreSQL
 - [LangGraph](https://github.com/langchain-ai/langgraph) — agent orchestration
 - [FastAPI](https://fastapi.tiangolo.com) — the best Python web framework
-```
+
