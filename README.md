@@ -43,38 +43,38 @@ Upload PDFs. Ask questions. Get cited answers. No cloud APIs. No data leaves you
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                     React Frontend                       │
-│          Vite · TypeScript · TailwindCSS                 │
-│        Zustand · React Query · Axios · SSE               │
+│                     React Frontend                      │
+│          Vite · TypeScript · TailwindCSS                │
+│        Zustand · React Query · Axios · SSE              │
 └────────────────────────┬────────────────────────────────┘
                          │ HTTP / SSE
 ┌────────────────────────▼────────────────────────────────┐
-│                   FastAPI Backend                        │
-│                                                          │
-│  ┌─────────────┐  ┌──────────────┐  ┌───────────────┐  │
-│  │  Auth API   │  │ Document API │  │   RAG / SSE   │  │
-│  │  JWT + RBAC │  │ Upload/Status│  │   Stream API  │  │
-│  └─────────────┘  └──────────────┘  └───────────────┘  │
-│                                                          │
+│                   FastAPI Backend                       │
+│                                                         │
+│  ┌─────────────┐  ┌──────────────┐  ┌───────────────┐   │
+│  │  Auth API   │  │ Document API │  │   RAG / SSE   │   │
+│  │  JWT + RBAC │  │ Upload/Status│  │   Stream API  │   │
+│  └─────────────┘  └──────────────┘  └───────────────┘   │
+│                                                         │
 │  ┌──────────────────────────────────────────────────┐   │
 │  │              LangGraph Agent                     │   │
 │  │  Query Analyzer → Memory → Retriever →           │   │
 │  │  Context Builder → Generator → Citation Builder  │   │
 │  └──────────────────────────────────────────────────┘   │
-│                                                          │
-│  ┌─────────────┐  ┌──────────────┐  ┌───────────────┐  │
-│  │  Hybrid     │  │   Ollama     │  │  RQ Workers   │  │
-│  │  Retriever  │  │  llama3:8b   │  │  Doc + Memory │  │
-│  │  pgvector   │  │  nomic-embed │  │  Processing   │  │
-│  │  + FTS/RRF  │  │              │  │               │  │
-│  └─────────────┘  └──────────────┘  └───────────────┘  │
+│                                                         │
+│  ┌─────────────┐  ┌──────────────┐  ┌───────────────┐   │
+│  │  Hybrid     │  │   Ollama     │  │  RQ Workers   │   │
+│  │  Retriever  │  │  llama3:8b   │  │  Doc + Memory │   │ 
+│  │  pgvector   │  │  nomic-embed │  │  Processing   │   │
+│  │  + FTS/RRF  │  │              │  │               │   │
+│  └─────────────┘  └──────────────┘  └───────────────┘   │
 └───────────┬────────────────┬────────────────────────────┘
             │                │
 ┌───────────▼──────┐  ┌──────▼───────┐
 │   PostgreSQL 16  │  │    Redis     │
-│   pgvector HNSW  │  │  RQ Queues  │
-│   FTS GIN Index  │  │             │
-└──────────────────┘  └─────────────┘
+│   pgvector HNSW  │  │  RQ Queues   │
+│   FTS GIN Index  │  │              │
+└──────────────────┘  └──────────────┘
 ```
 
 ### Key Design Decisions
