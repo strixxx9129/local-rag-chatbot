@@ -102,7 +102,7 @@ Upload PDFs. Ask questions. Get cited answers. No cloud APIs. No data leaves you
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/local-rag-chatbot.git
+git clone https://github.com/strixxx9129/local-rag-chatbot.git
 cd local-rag-chatbot
 ```
 
